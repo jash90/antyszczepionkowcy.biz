@@ -13,6 +13,7 @@ import { createIconSetFromFontello } from "react-native-vector-icons";
 import fontelloConfig from "../assets/config.json";
 import { Icons } from "../utils/Enums";
 import EStyleSheet from "react-native-extended-stylesheet";
+import { Actions } from "react-native-router-flux";
 const Icon = createIconSetFromFontello(fontelloConfig);
 interface Props {}
 export default class Home extends Component<Props> {
@@ -28,7 +29,8 @@ export default class Home extends Component<Props> {
           padding: 10
         }}
       >
-        <View
+        <TouchableOpacity 
+        onPress={()=>Actions.reset('start')}
           style={{
             width: "100%",
             flexDirection: "row",
@@ -41,7 +43,7 @@ export default class Home extends Component<Props> {
             size={50}
             color={EStyleSheet.value("$blue")}
           />
-        </View>
+        </TouchableOpacity>
         <View
           style={{
             flex: 10,
@@ -114,7 +116,7 @@ export default class Home extends Component<Props> {
                     fontSize: 22
                   }}
                 >
-                  {`KUP TERAZ ${PixelRatio.get()}`}
+                  {`KUP TERAZ`}
                 </Text>
               </TouchableOpacity>
             </View>
