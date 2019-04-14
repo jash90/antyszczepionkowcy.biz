@@ -5,7 +5,6 @@
 	};
 	objectVersion = 46;
 	objects = {
-
 /* Begin PBXBuildFile section */
 		00C302E51ABCBA2D00DB3ED1 /* libRCTActionSheet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302AC1ABCB8CE00DB3ED1 /* libRCTActionSheet.a */; };
 		00C302E71ABCBA2D00DB3ED1 /* libRCTGeolocation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302BA1ABCB90400DB3ED1 /* libRCTGeolocation.a */; };
@@ -64,6 +63,9 @@
 		E84739A21C064C52A34A2C1F /* libRNSVG.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D63348802DE3410EA9E103C8 /* libRNSVG.a */; };
 		ED297163215061F000B7C4FE /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED297162215061F000B7C4FE /* JavaScriptCore.framework */; };
 		ED2971652150620600B7C4FE /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED2971642150620600B7C4FE /* JavaScriptCore.framework */; };
+		BE8A3748EF0240019351CFDE /* libRCTTorch.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EE078D213A014629B88E6CDC /* libRCTTorch.a */; };
+		C56F0B2DF682452CBAC94CF5 /* RNPlaceholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FDA94C0FB9147F993AAC668 /* RNPlaceholder.swift */; };
+		8D51883469D74EC79EDEC2AB /* libRNTrackPlayer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 94C22E7C4D5F4A78892A5818 /* libRNTrackPlayer.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -482,6 +484,11 @@
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
 		F49096B689814D319FBE9DBD /* AntDesign.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = AntDesign.ttf; path = "../node_modules/react-native-vector-icons/Fonts/AntDesign.ttf"; sourceTree = "<group>"; };
+		B5A80F6CA63F45B385EA88DA /* RCTTorch.xcodeproj */ = {isa = PBXFileReference; name = "RCTTorch.xcodeproj"; path = "../node_modules/react-native-torch/ios/RCTTorch.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
+		EE078D213A014629B88E6CDC /* libRCTTorch.a */ = {isa = PBXFileReference; name = "libRCTTorch.a"; path = "libRCTTorch.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
+		8FDA94C0FB9147F993AAC668 /* RNPlaceholder.swift */ = {isa = PBXFileReference; name = "RNPlaceholder.swift"; path = "RNPlaceholder.swift"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.swift; explicitFileType = undefined; includeInIndex = 0; };
+		18AE05CFCB8743CDA0AA4792 /* RNTrackPlayer.xcodeproj */ = {isa = PBXFileReference; name = "RNTrackPlayer.xcodeproj"; path = "../node_modules/react-native-track-player/ios/RNTrackPlayer.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
+		94C22E7C4D5F4A78892A5818 /* libRNTrackPlayer.a */ = {isa = PBXFileReference; name = "libRNTrackPlayer.a"; path = "libRNTrackPlayer.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -515,6 +522,8 @@
 				E84739A21C064C52A34A2C1F /* libRNSVG.a in Frameworks */,
 				9DAEAFF412D244DFBF8FF863 /* libLottie.a in Frameworks */,
 				E6AFAB4E857A4A2AA08FD6E0 /* libLottieReactNative.a in Frameworks */,
+				BE8A3748EF0240019351CFDE /* libRCTTorch.a in Frameworks */,
+				8D51883469D74EC79EDEC2AB /* libRNTrackPlayer.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -733,6 +742,8 @@
 				0E8D1E4032964CA590A945C2 /* RNSVG.xcodeproj */,
 				3CBDD8ADA58B4028B68C0019 /* Lottie.xcodeproj */,
 				4BFF8438C87849F6A0F6F4DB /* LottieReactNative.xcodeproj */,
+				B5A80F6CA63F45B385EA88DA /* RCTTorch.xcodeproj */,
+				18AE05CFCB8743CDA0AA4792 /* RNTrackPlayer.xcodeproj */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -1434,6 +1445,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				00E356F31AD99517003FC87E /* StrukturyzatorWodyTests.m in Sources */,
+				C56F0B2DF682452CBAC94CF5 /* RNPlaceholder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1443,6 +1455,7 @@
 			files = (
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
+				C56F0B2DF682452CBAC94CF5 /* RNPlaceholder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1452,6 +1465,7 @@
 			files = (
 				2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */,
 				2D02E4BC1E0B4A80006451C7 /* AppDelegate.m in Sources */,
+				C56F0B2DF682452CBAC94CF5 /* RNPlaceholder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1460,6 +1474,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2DCD954D1E0B4F2C00145EB5 /* StrukturyzatorWodyTests.m in Sources */,
+				C56F0B2DF682452CBAC94CF5 /* RNPlaceholder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1510,6 +1525,8 @@
 					"$(SRCROOT)..\node_modules\neact-native-svgios/**",
 					"$(SRCROOT)..\node_moduleslottie-ioslottie-iosClasses/**",
 					"$(SRCROOT)..\node_moduleslottie-react-nativesrciosLottieReactNative",
+					"$(SRCROOT)/../node_modules/react-native-torch/ios",
+					"$(SRCROOT)/../node_modules/react-native-track-player/ios/RNTrackPlayer/**",
 				);
 				INFOPLIST_FILE = StrukturyzatorWodyTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -1523,6 +1540,8 @@
 					"\"$(SRCROOT)/$(TARGET_NAME)/System/Library/Frameworks\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -1531,6 +1550,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/StrukturyzatorWody.app/StrukturyzatorWody";
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -1545,6 +1565,8 @@
 					"$(SRCROOT)..\node_modules\neact-native-svgios/**",
 					"$(SRCROOT)..\node_moduleslottie-ioslottie-iosClasses/**",
 					"$(SRCROOT)..\node_moduleslottie-react-nativesrciosLottieReactNative",
+					"$(SRCROOT)/../node_modules/react-native-torch/ios",
+					"$(SRCROOT)/../node_modules/react-native-track-player/ios/RNTrackPlayer/**",
 				);
 				INFOPLIST_FILE = StrukturyzatorWodyTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -1558,6 +1580,8 @@
 					"\"$(SRCROOT)/$(TARGET_NAME)/System/Library/Frameworks\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -1566,6 +1590,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/StrukturyzatorWody.app/StrukturyzatorWody";
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};
@@ -1581,6 +1606,8 @@
 					"$(SRCROOT)..\node_modules\neact-native-svgios/**",
 					"$(SRCROOT)..\node_moduleslottie-ioslottie-iosClasses/**",
 					"$(SRCROOT)..\node_moduleslottie-react-nativesrciosLottieReactNative",
+					"$(SRCROOT)/../node_modules/react-native-torch/ios",
+					"$(SRCROOT)/../node_modules/react-native-track-player/ios/RNTrackPlayer/**",
 				);
 				INFOPLIST_FILE = StrukturyzatorWody/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1592,6 +1619,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = StrukturyzatorWody;
 				VERSIONING_SYSTEM = "apple-generic";
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -1606,6 +1634,8 @@
 					"$(SRCROOT)..\node_modules\neact-native-svgios/**",
 					"$(SRCROOT)..\node_moduleslottie-ioslottie-iosClasses/**",
 					"$(SRCROOT)..\node_moduleslottie-react-nativesrciosLottieReactNative",
+					"$(SRCROOT)/../node_modules/react-native-torch/ios",
+					"$(SRCROOT)/../node_modules/react-native-track-player/ios/RNTrackPlayer/**",
 				);
 				INFOPLIST_FILE = StrukturyzatorWody/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1617,6 +1647,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = StrukturyzatorWody;
 				VERSIONING_SYSTEM = "apple-generic";
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};
@@ -1638,6 +1669,8 @@
 					"$(SRCROOT)..\node_modules\neact-native-svgios/**",
 					"$(SRCROOT)..\node_moduleslottie-ioslottie-iosClasses/**",
 					"$(SRCROOT)..\node_moduleslottie-react-nativesrciosLottieReactNative",
+					"$(SRCROOT)/../node_modules/react-native-torch/ios",
+					"$(SRCROOT)/../node_modules/react-native-track-player/ios/RNTrackPlayer/**",
 				);
 				INFOPLIST_FILE = "StrukturyzatorWody-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1650,6 +1683,8 @@
 					"\"$(SRCROOT)/$(TARGET_NAME)/System/Library/Frameworks\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -1660,6 +1695,7 @@
 				SDKROOT = appletvos;
 				TARGETED_DEVICE_FAMILY = 3;
 				TVOS_DEPLOYMENT_TARGET = 9.2;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -1681,6 +1717,8 @@
 					"$(SRCROOT)..\node_modules\neact-native-svgios/**",
 					"$(SRCROOT)..\node_moduleslottie-ioslottie-iosClasses/**",
 					"$(SRCROOT)..\node_moduleslottie-react-nativesrciosLottieReactNative",
+					"$(SRCROOT)/../node_modules/react-native-torch/ios",
+					"$(SRCROOT)/../node_modules/react-native-track-player/ios/RNTrackPlayer/**",
 				);
 				INFOPLIST_FILE = "StrukturyzatorWody-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1693,6 +1731,8 @@
 					"\"$(SRCROOT)/$(TARGET_NAME)/System/Library/Frameworks\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -1703,6 +1743,7 @@
 				SDKROOT = appletvos;
 				TARGETED_DEVICE_FAMILY = 3;
 				TVOS_DEPLOYMENT_TARGET = 9.2;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};
@@ -1723,6 +1764,8 @@
 					"$(SRCROOT)..\node_modules\neact-native-svgios/**",
 					"$(SRCROOT)..\node_moduleslottie-ioslottie-iosClasses/**",
 					"$(SRCROOT)..\node_moduleslottie-react-nativesrciosLottieReactNative",
+					"$(SRCROOT)/../node_modules/react-native-torch/ios",
+					"$(SRCROOT)/../node_modules/react-native-track-player/ios/RNTrackPlayer/**",
 				);
 				INFOPLIST_FILE = "StrukturyzatorWody-tvOSTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -1735,6 +1778,8 @@
 					"\"$(SRCROOT)/$(TARGET_NAME)/System/Library/Frameworks\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -1745,6 +1790,7 @@
 				SDKROOT = appletvos;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/StrukturyzatorWody-tvOS.app/StrukturyzatorWody-tvOS";
 				TVOS_DEPLOYMENT_TARGET = 10.1;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -1765,6 +1811,8 @@
 					"$(SRCROOT)..\node_modules\neact-native-svgios/**",
 					"$(SRCROOT)..\node_moduleslottie-ioslottie-iosClasses/**",
 					"$(SRCROOT)..\node_moduleslottie-react-nativesrciosLottieReactNative",
+					"$(SRCROOT)/../node_modules/react-native-torch/ios",
+					"$(SRCROOT)/../node_modules/react-native-track-player/ios/RNTrackPlayer/**",
 				);
 				INFOPLIST_FILE = "StrukturyzatorWody-tvOSTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -1777,6 +1825,8 @@
 					"\"$(SRCROOT)/$(TARGET_NAME)/System/Library/Frameworks\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -1787,6 +1837,7 @@
 				SDKROOT = appletvos;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/StrukturyzatorWody-tvOS.app/StrukturyzatorWody-tvOS";
 				TVOS_DEPLOYMENT_TARGET = 10.1;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};
@@ -1840,6 +1891,7 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -1886,6 +1938,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};

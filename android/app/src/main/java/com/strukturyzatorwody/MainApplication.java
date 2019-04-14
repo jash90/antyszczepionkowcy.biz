@@ -3,6 +3,8 @@ package com.strukturyzatorwody;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
+import com.guichaguri.trackplayer.TrackPlayer;
+import com.cubicphuse.RCTTorch.RCTTorchPackage;
 import com.airbnb.android.react.lottie.LottiePackage;
 import com.horcrux.svg.SvgPackage;
 import com.oblador.vectoricons.VectorIconsPackage;
@@ -26,6 +28,8 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
+            new TrackPlayer(),
+            new RCTTorchPackage(),
             new LottiePackage(),
             new SvgPackage(),
             new VectorIconsPackage()
