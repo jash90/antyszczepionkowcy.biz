@@ -115,7 +115,7 @@ const styles = EStyleSheet.create({
     textAlign: "center",
     fontWeight: "bold",
     fontSize: 22,
-    fontFamily: 'Octi',
+    fontFamily: 'WorkSans',
   },
   button: {
     alignSelf: "center",
