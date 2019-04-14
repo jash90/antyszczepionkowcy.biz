@@ -1,4 +1,4 @@
-package com.strukturyzatorwody;
+package pl.raccoonsoftware.strukturyzatorwody;
 
 import android.app.Application;
 

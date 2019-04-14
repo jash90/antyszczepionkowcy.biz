@@ -22,10 +22,13 @@ import {
   isFaked,
   fakeOff,
   fakeOn,
-  copyright
+  copyright,
+  pleaseWait,
+  startText,
+  PatternVibration
 } from "../utils/Const";
 import Torch from "react-native-torch";
-import TrackPlayer from 'react-native-track-player';
+import TrackPlayer from "react-native-track-player";
 interface Props {}
 interface State {
   animation: Animated.Value;
@@ -44,13 +47,6 @@ export default class Home extends Component<Props, State> {
     this.state.animation.addListener(({ value }) =>
       this.setState({ progress: Number(value) })
     );
-    TrackPlayer.setupPlayer().then(async () => {
-
-      // Adds a track to the queue
-     
-  });
-
-
   }
 
   render() {
@@ -62,7 +58,8 @@ export default class Home extends Component<Props, State> {
             onPress={() => {
               this.onPressHeader();
             }}
-            style={styles.headerButton}>
+            style={styles.headerButton}
+          >
             <Image
               source={require("../assets/images/logo-only-icon.png")}
               style={styles.image}
@@ -84,11 +81,22 @@ export default class Home extends Component<Props, State> {
             </Text>
           </View>
         )}
+
+        {progress === 0 && (
+          <View style={{ padding: 10 }}>
+            <Text
+              style={{ fontSize: 20, color: "white", textAlign: "justify" }}
+            >
+              {startText}
+            </Text>
+          </View>
+        )}
         <TouchableOpacity
           style={styles.button}
           onPress={() => {
             this.fakeStart();
-          }}>
+          }}
+        >
           <Text style={styles.text}>{this.buttonText(progress)}</Text>
         </TouchableOpacity>
       </SafeAreaView>
@@ -97,18 +105,26 @@ export default class Home extends Component<Props, State> {
 
   fakeStart = async () => {
     const { animation } = this.state;
-  //  TrackPlayer.play();
-    setTimeout(async () => {
-      Torch.switchState(true);
-    }, 0);
+    TrackPlayer.setupPlayer().then(async () => {
+      await TrackPlayer.add({
+        id: "trackId",
+        url: require("../assets/music/blipper.mp3"),
+        title: isFaked,
+        artist: pleaseWait
+      });
+      TrackPlayer.play();
+    });
+    Torch.switchState(true);
 
-    setTimeout(async () => {
+
+    setTimeout( () => {
       Torch.switchState(false);
-    }, 5000);
-    Vibration.vibrate(DurationVibration, false);
+    }, DurationVibration);
+
+    Vibration.vibrate(PatternVibration, false);
     Animated.timing(animation, {
       toValue: 1,
-      duration: 5000,
+      duration: DurationVibration,
       easing: Easing.linear
     }).start(async () => {
       animation.addListener(async ({ value }) =>
