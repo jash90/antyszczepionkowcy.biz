@@ -12,7 +12,8 @@ import {
   Easing,
   Alert,
   Dimensions,
-  Vibration
+  Vibration,
+  Image
 } from "react-native";
 import { createIconSetFromFontello } from "react-native-vector-icons";
 import fontelloConfig from "../assets/config.json";
@@ -52,10 +53,24 @@ export default class Home extends Component<Props, State> {
           justifyContent: "flex-end",
           backgroundColor: EStyleSheet.value("$navy"),
           padding: 10
-        }}>
+        }}
+      >
+        <View
+          style={{ flex: 1, width: "100%", justifyContent: "flex-start" }}
+        >
+          <TouchableOpacity onPress={()=>Linking.openURL('https://www.raccoonsoftware.pl')} style={{ flexDirection: "row", alignItems: "center" }}>
+            <Image
+              source={require("../assets/images/logo-only-icon.png")}
+              style={{ width: 50, height: 50 }}
+            />
+            <Text style={{ color: "white", fontSize: 16 }}>
+              © Copyright 2019 RaccconSoftware.pl
+            </Text>
+          </TouchableOpacity>
+        </View>
         {this.state.progress > 0 && (
           <LottieView
-            source={require("../assets/loading.json")}
+            source={require("../assets/animations/loading.json")}
             progress={this.state.animation}
             autoSize
           />
@@ -68,23 +83,24 @@ export default class Home extends Component<Props, State> {
               height: "100%",
               justifyContent: "flex-end",
               alignItems: "center",
-              paddingBottom: 220
-            }}>
+              paddingBottom: 200
+            }}
+          >
             <Text style={{ color: "white", fontSize: 40 }}>
-              {(this.state.progress *100).toFixed(0)+ "%"}
+              {(this.state.progress * 100).toFixed(0) + "%"}
             </Text>
           </View>
         )}
         <TouchableOpacity
           style={{
-            alignSelf: "center",
             backgroundColor: EStyleSheet.value("$blue"),
             width: "85%",
-            height:70,
-            paddingVertical: 20,
+            height: 70,
+            paddingVertical: 10,
             borderRadius: 20,
             borderWidth: 1,
-            marginBottom: 20
+            justifyContent: "center",
+            alignItems: "center"
           }}
           onPress={() => {
             Vibration.vibrate(
@@ -150,18 +166,20 @@ export default class Home extends Component<Props, State> {
               this.state.animation.addListener(({ value }) =>
                 this.setState({ progress: Number(value) })
               );
-              // Alert.alert("Informacja", "Woda została ustrykturyzowana.", [
-              //   { text: "OK", onPress: () => Actions.home() }
-              // ]);
+              Alert.alert("Informacja", "Woda została ustrykturyzowana.", [
+                { text: "OK", onPress: () => Actions.home() }
+              ]);
             });
-          }}>
+          }}
+        >
           <Text
             style={{
               color: "white",
               textAlign: "center",
               fontWeight: "bold",
               fontSize: 22
-            }}>
+            }}
+          >
             {this.state.progress > 0
               ? this.state.progress === 1
                 ? `Strukturyzacja zakończona`

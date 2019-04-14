@@ -7,7 +7,8 @@ import {
   SafeAreaView,
   TouchableOpacity,
   Linking,
-  PixelRatio
+  PixelRatio,
+  Dimensions
 } from "react-native";
 import { createIconSetFromFontello } from "react-native-vector-icons";
 import fontelloConfig from "../assets/config.json";
@@ -29,8 +30,8 @@ export default class Home extends Component<Props> {
           padding: 10
         }}
       >
-        <TouchableOpacity 
-        onPress={()=>Actions.reset('start')}
+        <TouchableOpacity
+          onPress={() => Actions.reset("start")}
           style={{
             width: "100%",
             flexDirection: "row",
@@ -40,14 +41,14 @@ export default class Home extends Component<Props> {
         >
           <Icon
             name={Icons.close}
-            size={50}
+            size={Dimensions.get('window').width/10}
             color={EStyleSheet.value("$blue")}
           />
         </TouchableOpacity>
         <View
           style={{
             flex: 10,
-            width:'100%',
+            width: "100%",
             alignItems: "center",
             justifyContent: "flex-start"
           }}
@@ -61,46 +62,63 @@ export default class Home extends Component<Props> {
           >
             <Icon
               name={Icons.strzykawka}
-              size={200}
+              size={Dimensions.get("window").width / 2}
               color={EStyleSheet.value("$red")}
             />
           </View>
-          <View style={{ flex: 1, width:'100%' }}>
-            <View>
+          <View style={{ flex: 1, width: "100%" }}>
+            <View
+              style={{
+                flex: 1,
+                justifyContent: "center"
+              }}
+            >
               <Text
                 style={{
                   color: "white",
-                  fontSize: 22,
+                  fontSize: Dimensions.get("window").width / 18,
                   textAlign: "center",
-                  paddingHorizontal: 30,
-                  paddingBottom: 20
+                  paddingHorizontal: 30
                 }}
               >
                 {`Kampania crowdfundingowa satyrycznej gry karcianej`}
-                <Text style={{ color: EStyleSheet.value("$blue") }}>
+                <Text
+                  style={{
+                    color: EStyleSheet.value("$blue"),
+                    fontWeight: "bold"
+                  }}
+                >
                   {` antyszczepionkowcy`}
                 </Text>
                 <Text
-                  style={{ color: EStyleSheet.value("$red") }}
+                  style={{
+                    color: EStyleSheet.value("$red"),
+                    fontWeight: "bold"
+                  }}
                 >{`.biz\n`}</Text>
                 na polakpotrafi.pl już trwa!
               </Text>
             </View>
             <View
               style={{
+                flex: 1,
                 width: "100%",
-                justifyContent: "flex-start",
-                alignSelf: "center"
+                justifyContent: "flex-end",
+                alignSelf: "center",
               }}
             >
               <TouchableOpacity
                 style={{
-                  alignSelf:'center',
+                  alignSelf: "center",
                   backgroundColor: EStyleSheet.value("$blue"),
-                  width:'70%',
-                  paddingVertical: 20,
+                  width: "85%",
+                  height: 70,
+                  paddingVertical: 10,
                   borderRadius: 20,
-                  borderWidth: 1
+                  borderWidth: 1,
+                  justifyContent: "center",
+                  alignItems: "center",
+                  marginBottom: 20
                 }}
                 onPress={() =>
                   Linking.openURL(
@@ -113,7 +131,7 @@ export default class Home extends Component<Props> {
                     color: "white",
                     textAlign: "center",
                     fontWeight: "bold",
-                    fontSize: 22
+                    fontSize: 22,
                   }}
                 >
                   {`KUP TERAZ`}
