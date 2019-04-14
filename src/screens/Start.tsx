@@ -58,10 +58,9 @@ export default class Home extends Component<Props, State> {
             onPress={() => {
               this.onPressHeader();
             }}
-            style={styles.headerButton}
-          >
+            style={styles.headerButton}>
             <Image
-              source={require("../assets/images/logo-only-icon.png")}
+              source={require("../../assets/images/logo-only-icon.png")}
               style={styles.image}
             />
             <Text style={styles.headerText}>{copyright}</Text>
@@ -69,7 +68,7 @@ export default class Home extends Component<Props, State> {
         </View>
         {progress > 0 && (
           <LottieView
-            source={require("../assets/animations/loading.json")}
+            source={require("../../assets/animations/loading.json")}
             progress={animation}
             autoSize
           />
@@ -83,20 +82,15 @@ export default class Home extends Component<Props, State> {
         )}
 
         {progress === 0 && (
-          <View style={{ padding: 10 }}>
-            <Text
-              style={{ fontSize: 20, color: "white", textAlign: "justify" }}
-            >
-              {startText}
-            </Text>
+          <View style={styles.descriptionContainer}>
+            <Text style={styles.description}>{startText}</Text>
           </View>
         )}
         <TouchableOpacity
           style={styles.button}
           onPress={() => {
             this.fakeStart();
-          }}
-        >
+          }}>
           <Text style={styles.text}>{this.buttonText(progress)}</Text>
         </TouchableOpacity>
       </SafeAreaView>
@@ -108,7 +102,7 @@ export default class Home extends Component<Props, State> {
     TrackPlayer.setupPlayer().then(async () => {
       await TrackPlayer.add({
         id: "trackId",
-        url: require("../assets/music/blipper.mp3"),
+        url: require("../../assets/music/blipper.mp3"),
         title: isFaked,
         artist: pleaseWait
       });
@@ -116,8 +110,7 @@ export default class Home extends Component<Props, State> {
     });
     Torch.switchState(true);
 
-
-    setTimeout( () => {
+    setTimeout(() => {
       Torch.switchState(false);
     }, DurationVibration);
 
@@ -156,12 +149,15 @@ export default class Home extends Component<Props, State> {
 }
 
 const styles = EStyleSheet.create({
+  description: { fontSize: 20, color: "white", textAlign: "justify", fontFamily: 'WorkSans', },
+  descriptionContainer: { padding: 10 },
   headerButton: { flexDirection: "row", alignItems: "center" },
   text: {
     color: "white",
     textAlign: "center",
     fontWeight: "bold",
-    fontSize: 22
+    fontSize: 22,
+    fontFamily: "WorkSans"
   },
   button: {
     backgroundColor: "$blue",
@@ -173,7 +169,7 @@ const styles = EStyleSheet.create({
     justifyContent: "center",
     alignItems: "center"
   },
-  progressText: { color: "white", fontSize: 40 },
+  progressText: { color: "white", fontSize: 40, fontFamily: "WorkSans" },
   progressAnimation: {
     position: "absolute",
     width: "100%",
@@ -182,7 +178,7 @@ const styles = EStyleSheet.create({
     alignItems: "center",
     paddingBottom: 200
   },
-  headerText: { color: "white", fontSize: 16 },
+  headerText: { color: "white", fontSize: 16, fontFamily: "WorkSans" },
   image: { width: 50, height: 50 },
   header: { flex: 1, width: "100%", justifyContent: "flex-start" },
   safeArea: {

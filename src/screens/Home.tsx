@@ -8,7 +8,7 @@ import {
   Dimensions
 } from "react-native";
 import { createIconSetFromFontello } from "react-native-vector-icons";
-import fontelloConfig from "../assets/config.json";
+import fontelloConfig from "../../assets/config.json";
 import { Icons } from "../utils/Enums";
 import EStyleSheet from "react-native-extended-stylesheet";
 import { Actions } from "react-native-router-flux";
@@ -85,7 +85,8 @@ const styles = EStyleSheet.create({
     color: "white",
     fontSize: Dimensions.get("window").width / 18,
     textAlign: "center",
-    paddingHorizontal: 30
+    paddingHorizontal: 30,
+    fontFamily: 'WorkSans',
   },
   textContainer: {
     flex: 1,
@@ -113,7 +114,8 @@ const styles = EStyleSheet.create({
     color: "white",
     textAlign: "center",
     fontWeight: "bold",
-    fontSize: 22
+    fontSize: 22,
+    fontFamily: 'Octi',
   },
   button: {
     alignSelf: "center",
