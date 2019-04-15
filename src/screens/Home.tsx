@@ -86,7 +86,7 @@ const styles = EStyleSheet.create({
     fontSize: Dimensions.get("window").width / 18,
     textAlign: "center",
     paddingHorizontal: 30,
-    fontFamily: 'WorkSans',
+    fontFamily: "WorkSans"
   },
   textContainer: {
     flex: 1,
@@ -115,7 +115,7 @@ const styles = EStyleSheet.create({
     textAlign: "center",
     fontWeight: "bold",
     fontSize: 22,
-    fontFamily: 'WorkSans',
+    fontFamily: "WorkSans"
   },
   button: {
     alignSelf: "center",

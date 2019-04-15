@@ -58,7 +58,8 @@ export default class Home extends Component<Props, State> {
             onPress={() => {
               this.onPressHeader();
             }}
-            style={styles.headerButton}>
+            style={styles.headerButton}
+          >
             <Image
               source={require("../../assets/images/logo-only-icon.png")}
               style={styles.image}
@@ -90,7 +91,8 @@ export default class Home extends Component<Props, State> {
           style={styles.button}
           onPress={() => {
             this.fakeStart();
-          }}>
+          }}
+        >
           <Text style={styles.text}>{this.buttonText(progress)}</Text>
         </TouchableOpacity>
       </SafeAreaView>
@@ -102,7 +104,7 @@ export default class Home extends Component<Props, State> {
     TrackPlayer.setupPlayer().then(async () => {
       await TrackPlayer.add({
         id: "trackId",
-        url: require("../../assets/music/blipper.mp3"),
+        url: require("../../assets/music/alarm.mp3"),
         title: isFaked,
         artist: pleaseWait
       });
@@ -149,7 +151,12 @@ export default class Home extends Component<Props, State> {
 }
 
 const styles = EStyleSheet.create({
-  description: { fontSize: 20, color: "white", textAlign: "justify", fontFamily: 'WorkSans', },
+  description: {
+    fontSize: 20,
+    color: "white",
+    textAlign: "justify",
+    fontFamily: "WorkSans"
+  },
   descriptionContainer: { padding: 10 },
   headerButton: { flexDirection: "row", alignItems: "center" },
   text: {
