@@ -9,7 +9,8 @@ import {
   Easing,
   Alert,
   Vibration,
-  Image
+  Image,
+  BackHandler
 } from "react-native";
 import EStyleSheet from "react-native-extended-stylesheet";
 import LottieView from "lottie-react-native";
@@ -44,9 +45,19 @@ export default class Home extends Component<Props, State> {
   }
 
   componentDidMount() {
+    BackHandler.addEventListener("hardwareBackPress", () => this.onBack());
     this.state.animation.addListener(({ value }) =>
       this.setState({ progress: Number(value) })
     );
+  }
+
+  onBack() {
+    BackHandler.exitApp();
+    return true;
+  }
+
+  componentWillMount() {
+    BackHandler.removeEventListener("hardwareBackPress", () => this.onBack());
   }
 
   render() {
@@ -129,7 +140,7 @@ export default class Home extends Component<Props, State> {
       Alert.alert(info, waterIsFake, [
         {
           text: "OK",
-          onPress: () => Actions.home()
+          onPress: () => Actions.promotions()
         }
       ]);
     });

@@ -5,7 +5,8 @@ import {
   SafeAreaView,
   TouchableOpacity,
   Linking,
-  Dimensions
+  Dimensions,
+  BackHandler
 } from "react-native";
 import { createIconSetFromFontello } from "react-native-vector-icons";
 import fontelloConfig from "../../assets/config.json";
@@ -22,7 +23,20 @@ import {
 } from "../utils/Const";
 const Icon = createIconSetFromFontello(fontelloConfig);
 
-export default class Home extends Component {
+export default class Promotions extends Component {
+  componentDidMount() {
+    BackHandler.addEventListener("hardwareBackPress", () => this.onBack());
+  }
+
+  onBack() {
+    Actions.reset("start");
+    return true;
+  }
+
+  componentWillMount() {
+    BackHandler.removeEventListener("hardwareBackPress", () => this.onBack());
+  }
+
   render() {
     return (
       <SafeAreaView style={styles.safeArea}>
