@@ -24,19 +24,6 @@ import {
 const Icon = createIconSetFromFontello(fontelloConfig);
 
 export default class Promotions extends Component {
-  componentDidMount() {
-    BackHandler.addEventListener("hardwareBackPress", () => this.onBack());
-  }
-
-  onBack() {
-    Actions.reset("start");
-    return true;
-  }
-
-  componentWillMount() {
-    BackHandler.removeEventListener("hardwareBackPress", () => this.onBack());
-  }
-
   render() {
     return (
       <SafeAreaView style={styles.safeArea}>

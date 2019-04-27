@@ -45,19 +45,9 @@ export default class Home extends Component<Props, State> {
   }
 
   componentDidMount() {
-    BackHandler.addEventListener("hardwareBackPress", () => this.onBack());
     this.state.animation.addListener(({ value }) =>
       this.setState({ progress: Number(value) })
     );
-  }
-
-  onBack() {
-    BackHandler.exitApp();
-    return true;
-  }
-
-  componentWillMount() {
-    BackHandler.removeEventListener("hardwareBackPress", () => this.onBack());
   }
 
   render() {
