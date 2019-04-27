@@ -149,6 +149,13 @@ android {
 }
 
 dependencies {
+    implementation "com.google.firebase:firebase-messaging:17.5.0"
+    implementation 'me.leolin:ShortcutBadger:1.1.21@aar'
+    implementation "com.google.android.gms:play-services-base:16.1.0"
+    implementation "com.google.firebase:firebase-core:16.0.8"
+    compile(project(':react-native-firebase')) {
+        transitive = false
+    }
     implementation project(':react-native-track-player')
     implementation project(':react-native-torch')
     implementation project(':lottie-react-native')
@@ -165,3 +172,5 @@ task copyDownloadableDepsToLibs(type: Copy) {
     from configurations.compile
     into 'libs'
 }
+
+apply plugin: 'com.google.gms.google-services'
