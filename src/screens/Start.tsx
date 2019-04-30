@@ -30,6 +30,7 @@ import {
 } from "../utils/Const";
 import Torch from "react-native-torch";
 import TrackPlayer from "react-native-track-player";
+import { ButtonDebounce } from "../components/ButtonDebounce";
 interface Props {}
 interface State {
   animation: Animated.Value;
@@ -59,8 +60,7 @@ export default class Home extends Component<Props, State> {
             onPress={() => {
               this.onPressHeader();
             }}
-            style={styles.headerButton}
-          >
+            style={styles.headerButton}>
             <Image
               source={require("../../assets/images/logo-only-icon.png")}
               style={styles.image}
@@ -88,14 +88,15 @@ export default class Home extends Component<Props, State> {
             <Text style={styles.description}>{startText}</Text>
           </View>
         )}
-        <TouchableOpacity
-          style={styles.button}
+        <ButtonDebounce
+          styleView={styles.button}
+          styleText={styles.text}
+          text={this.buttonText(progress)}
+          value={progress === 0}
           onPress={() => {
             this.fakeStart();
           }}
-        >
-          <Text style={styles.text}>{this.buttonText(progress)}</Text>
-        </TouchableOpacity>
+        />
       </SafeAreaView>
     );
   }
@@ -127,12 +128,17 @@ export default class Home extends Component<Props, State> {
         this.setState({ progress: Number(value) })
       );
       TrackPlayer.stop();
-      Alert.alert(info, waterIsFake, [
-        {
-          text: "OK",
-          onPress: () => Actions.promotions()
-        }
-      ]);
+      Alert.alert(
+        info,
+        waterIsFake,
+        [
+          {
+            text: "OK",
+            onPress: () => Actions.promotions()
+          }
+        ],
+        { cancelable: false }
+      );
     });
   };
 
