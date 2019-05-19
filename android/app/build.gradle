@@ -105,7 +105,7 @@ android {
         applicationId "pl.raccoonsoftware.strukturyzatorwody"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 6
+        versionCode 201915 //year version number
         versionName "1.5"
     }
     signingConfigs {
