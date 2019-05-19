@@ -8,8 +8,6 @@ import com.cubicphuse.RCTTorch.RCTTorchPackage;
 import com.airbnb.android.react.lottie.LottiePackage;
 import com.horcrux.svg.SvgPackage;
 import com.oblador.vectoricons.VectorIconsPackage;
-import io.invertase.firebase.RNFirebasePackage;
-import io.invertase.firebase.messaging.RNFirebaseMessagingPackage;
 import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
 import com.facebook.react.shell.MainReactPackage;
@@ -34,9 +32,7 @@ public class MainApplication extends Application implements ReactApplication {
             new RCTTorchPackage(),
             new LottiePackage(),
             new SvgPackage(),
-            new VectorIconsPackage(),
-            new RNFirebasePackage(),
-            new RNFirebaseMessagingPackage()
+            new VectorIconsPackage()
       );
     }
 
