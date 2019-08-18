@@ -16,7 +16,7 @@ import EStyleSheet from "react-native-extended-stylesheet";
 import LottieView from "lottie-react-native";
 import { Actions } from "react-native-router-flux";
 import {
-  DurationVibration,
+  durationVibration,
   info,
   waterIsFake,
   racconWebsite,
@@ -26,7 +26,7 @@ import {
   copyright,
   pleaseWait,
   startText,
-  PatternVibration
+  patternVibration
 } from "../utils/Const";
 import Torch from "react-native-torch";
 import TrackPlayer from "react-native-track-player";
@@ -61,10 +61,7 @@ export default class Home extends Component<Props, State> {
               this.onPressHeader();
             }}
             style={styles.headerButton}>
-            <Image
-              source={{uri:"raccoon"}}
-              style={styles.image}
-            />
+            <Image source={{ uri: "raccoon" }} style={styles.image} />
             <Text style={styles.headerText}>{copyright}</Text>
           </TouchableOpacity>
         </View>
@@ -116,12 +113,12 @@ export default class Home extends Component<Props, State> {
 
     setTimeout(() => {
       Torch.switchState(false);
-    }, DurationVibration);
+    }, durationVibration);
 
-    Vibration.vibrate(PatternVibration, false);
+    Vibration.vibrate(patternVibration, false);
     Animated.timing(animation, {
       toValue: 1,
-      duration: DurationVibration,
+      duration: durationVibration,
       easing: Easing.linear
     }).start(async () => {
       animation.addListener(async ({ value }) =>
