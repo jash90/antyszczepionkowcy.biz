@@ -102,7 +102,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "pl.raccoonsoftware.strukturyzatorwody"
+        applicationId "pl.raccoonsoftware.strukturyzatorwody.app"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 201915 //year version number

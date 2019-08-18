@@ -62,7 +62,7 @@ export default class Home extends Component<Props, State> {
             }}
             style={styles.headerButton}>
             <Image
-              source={require("../../assets/images/logo-only-icon.png")}
+              source={{uri:"raccoon"}}
               style={styles.image}
             />
             <Text style={styles.headerText}>{copyright}</Text>
@@ -192,7 +192,7 @@ const styles = EStyleSheet.create({
     alignItems: "center",
     paddingBottom: 200
   },
-  headerText: { color: "white", fontSize: 16, fontFamily: "WorkSans" },
+  headerText: { color: "white", fontSize: 14, fontFamily: "WorkSans" },
   image: { width: 50, height: 50 },
   header: { flex: 1, width: "100%", justifyContent: "flex-start" },
   safeArea: {

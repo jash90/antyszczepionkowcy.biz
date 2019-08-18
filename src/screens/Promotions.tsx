@@ -13,27 +13,16 @@ import fontelloConfig from "../../assets/config.json";
 import { Icons } from "../utils/Enums";
 import EStyleSheet from "react-native-extended-stylesheet";
 import { Actions } from "react-native-router-flux";
-import {
-  buy,
-  crowFundSite,
-  crowFund2,
-  site2,
-  site1,
-  crowFund1
-} from "../utils/Const";
+import { buy, crowFundSite, crowFund2, crowFund1 } from "../utils/Const";
+import { TitleSite } from "../components/TitleSite";
+import { CloseIcon } from "../components/CloseIcon";
 const Icon = createIconSetFromFontello(fontelloConfig);
 
 export default class Promotions extends Component {
   render() {
     return (
       <SafeAreaView style={styles.safeArea}>
-        <TouchableOpacity onPress={() => this.onClose()} style={styles.close}>
-          <Icon
-            name={Icons.close}
-            size={Dimensions.get("window").width / 10}
-            color={EStyleSheet.value("$blue")}
-          />
-        </TouchableOpacity>
+        <CloseIcon />
         <View style={styles.container}>
           <View style={styles.logo}>
             <Icon
@@ -46,16 +35,14 @@ export default class Promotions extends Component {
             <View style={styles.textContainer}>
               <Text style={styles.text}>
                 {crowFund1}
-                <Text style={styles.textBlue}>{site1}</Text>
-                <Text style={styles.textRed}>{site2}</Text>
+                <TitleSite />
                 {crowFund2}
               </Text>
             </View>
             <View style={styles.buttonContainer}>
               <TouchableOpacity
                 style={styles.button}
-                onPress={() => this.onBuy()}
-              >
+                onPress={() => this.onBuy()}>
                 <Text style={styles.buttonText}>{buy}</Text>
               </TouchableOpacity>
             </View>
@@ -65,9 +52,6 @@ export default class Promotions extends Component {
     );
   }
 
-  onClose() {
-    Actions.reset("start");
-  }
   onBuy() {
     Linking.openURL(crowFundSite);
   }
@@ -90,7 +74,6 @@ const styles = EStyleSheet.create({
     fontFamily: "WorkSans"
   },
   textContainer: {
-    flex: 1,
     justifyContent: "center"
   },
   content: { flex: 1, width: "100%" },

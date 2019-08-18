@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Router, Stack, Scene, Actions } from "react-native-router-flux";
 import Promotions from "./src/screens/Promotions";
 import Start from "./src/screens/Start";
+import About from "./src/screens/About";
 import EStyleSheet from "react-native-extended-stylesheet";
 import { BackHandler } from "react-native";
 export default class App extends Component {
@@ -26,6 +27,7 @@ export default class App extends Component {
         <Stack key="root">
           <Scene key="start" component={Start} hideNavBar />
           <Scene key="promotions" component={Promotions} hideNavBar />
+          <Scene key="about" component={About} hideNavBar />
         </Stack>
       </Router>
     );
