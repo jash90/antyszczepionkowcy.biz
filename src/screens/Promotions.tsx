@@ -22,7 +22,7 @@ export default class Promotions extends Component {
   render() {
     return (
       <SafeAreaView style={styles.safeArea}>
-        <CloseIcon />
+        <CloseIcon onPress={()=>Actions.about()}/>
         <View style={styles.container}>
           <View style={styles.logo}>
             <Icon

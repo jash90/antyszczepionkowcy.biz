@@ -35,13 +35,14 @@ import { BuyButton } from "../components/BuyButton";
 import { TextDescription } from "../components/TextDescription";
 import { AdvantageItem } from "../components/AdvantageItem";
 import { RCImage } from "../components/RCImage";
+import { Actions } from "react-native-router-flux";
 
 export default class About extends Component {
   render() {
     return (
       <ScrollView style={styles.scroll}>
         <View style={styles.container}>
-          <CloseIcon />
+          <CloseIcon onPress={()=>Actions.start()} />
           <TouchableOpacity onPress={() => Linking.openURL(antySite)}>
             <RCImage
               uri="biz"

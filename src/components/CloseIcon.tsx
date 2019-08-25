@@ -1,17 +1,16 @@
 import React from "react";
-import { Dimensions, TouchableOpacity } from "react-native";
+import { Dimensions, TouchableOpacity, GestureResponderEvent } from "react-native";
 import _ from "underscore";
 import { Icons } from "../utils/Enums";
 import EStyleSheet from "react-native-extended-stylesheet";
 import { createIconSetFromFontello } from "react-native-vector-icons";
 import fontelloConfig from "../../assets/config.json";
-import { Actions } from "react-native-router-flux";
 const Icon = createIconSetFromFontello(fontelloConfig);
 
-export const CloseIcon: React.FC<{}> = () => {
+export const CloseIcon: React.FC<{onPress:()=>void}> = ({onPress}) => {
   return (
     <>
-      <TouchableOpacity onPress={Actions.about} style={styles.close}>
+      <TouchableOpacity onPress={onPress} style={styles.close}>
         <Icon
           name={Icons.close}
           size={Dimensions.get("window").width / 10}
