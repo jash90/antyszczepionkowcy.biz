@@ -16,8 +16,10 @@ import EStyleSheet from 'react-native-extended-stylesheet';
 import { Actions } from 'react-native-router-flux';
 import Torch from 'react-native-torch';
 import TrackPlayer from 'react-native-track-player';
+import _ from 'underscore';
 
 import { ButtonDebounce } from '../components/ButtonDebounce';
+import { TitleSite } from '../components/TitleSite';
 import {
   copyright,
   durationVibration,
@@ -31,6 +33,7 @@ import {
   startText,
   waterIsFake,
 } from '../utils/Const';
+
 
 interface Props {}
 interface State {
@@ -79,6 +82,13 @@ export default class Home extends Component<Props, State> {
               {(progress * 100).toFixed(0) + "%"}
             </Text>
           </View>
+        )}
+
+        {progress === 0 && (
+          <TouchableOpacity
+            onPress={_.debounce(() => Actions.about(), 500, true)}>
+            <TitleSite />
+          </TouchableOpacity>
         )}
 
         {progress === 0 && (
