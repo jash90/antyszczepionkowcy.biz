@@ -1,18 +1,16 @@
-import React from "react";
-import {
-  Text,
-  TouchableOpacity,
-  Linking,
-} from "react-native";
-import EStyleSheet from "react-native-extended-stylesheet";
-import { buy, crowFundSite } from "../utils/Const";
+import React from 'react';
+import { Linking, Text, TouchableOpacity } from 'react-native';
+import EStyleSheet from 'react-native-extended-stylesheet';
+
+import { buy, crowFundSite } from '../utils/Const';
+
 export const BuyButton: React.FC<{}> = () => {
   return (
-      <TouchableOpacity
-        style={styles.button}
-        onPress={() => Linking.openURL(crowFundSite)}>
-        <Text style={styles.buttonText}>{buy}</Text>
-      </TouchableOpacity>
+    <TouchableOpacity
+      style={styles.button}
+      onPress={() => Linking.openURL(crowFundSite)}>
+      <Text style={styles.buttonText}>{buy}</Text>
+    </TouchableOpacity>
   );
 };
 

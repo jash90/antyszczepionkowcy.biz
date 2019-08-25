@@ -1,7 +1,7 @@
-import React from "react";
-import { Text, Image, View } from "react-native";
-import _ from "underscore";
-import EStyleSheet from "react-native-extended-stylesheet";
+import React from 'react';
+import { Image, Text, View } from 'react-native';
+import EStyleSheet from 'react-native-extended-stylesheet';
+
 interface Props {
   title: string;
   img: string;
@@ -9,15 +9,15 @@ interface Props {
 }
 export const AdvantageItem: React.FC<Props> = ({ title, img, description }) => {
   return (
-      <View>
-        <Text style={styles.title}>{title}</Text>
-        <View style={styles.container}>
-          <Image style={styles.img} source={{ uri: img }} />
-          <View style={styles.fill}>
-            <Text style={styles.imgText}>{description}</Text>
-          </View>
+    <View>
+      <Text style={styles.title}>{title}</Text>
+      <View style={styles.container}>
+        <Image style={styles.img} source={{ uri: img }} />
+        <View style={styles.fill}>
+          <Text style={styles.imgText}>{description}</Text>
         </View>
       </View>
+    </View>
   );
 };
 const styles = EStyleSheet.create({

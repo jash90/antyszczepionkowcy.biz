@@ -1,28 +1,22 @@
-import React, { Component } from "react";
-import {
-  Text,
-  View,
-  SafeAreaView,
-  TouchableOpacity,
-  Linking,
-  Dimensions,
-  BackHandler
-} from "react-native";
-import { createIconSetFromFontello } from "react-native-vector-icons";
-import fontelloConfig from "../../assets/config.json";
-import { Icons } from "../utils/Enums";
-import EStyleSheet from "react-native-extended-stylesheet";
-import { Actions } from "react-native-router-flux";
-import { buy, crowFundSite, crowFund2, crowFund1 } from "../utils/Const";
-import { TitleSite } from "../components/TitleSite";
-import { CloseIcon } from "../components/CloseIcon";
+import React, { Component } from 'react';
+import { Dimensions, Linking, SafeAreaView, Text, TouchableOpacity, View } from 'react-native';
+import EStyleSheet from 'react-native-extended-stylesheet';
+import { Actions } from 'react-native-router-flux';
+import { createIconSetFromFontello } from 'react-native-vector-icons';
+
+import fontelloConfig from '../../assets/config.json';
+import { CloseIcon } from '../components/CloseIcon';
+import { TitleSite } from '../components/TitleSite';
+import { buy, crowFund1, crowFund2, crowFundSite } from '../utils/Const';
+import { Icons } from '../utils/Enums';
+
 const Icon = createIconSetFromFontello(fontelloConfig);
 
 export default class Promotions extends Component {
   render() {
     return (
       <SafeAreaView style={styles.safeArea}>
-        <CloseIcon onPress={()=>Actions.about()}/>
+        <CloseIcon onPress={() => Actions.about()} />
         <View style={styles.container}>
           <View style={styles.logo}>
             <Icon

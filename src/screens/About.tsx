@@ -1,48 +1,40 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
+import { FlatList, Image, Linking, ScrollView, Text, TouchableOpacity, View } from 'react-native';
+import EStyleSheet from 'react-native-extended-stylesheet';
+import { Actions } from 'react-native-router-flux';
+
+import { AdvantageItem } from '../components/AdvantageItem';
+import { BuyButton } from '../components/BuyButton';
+import { CloseIcon } from '../components/CloseIcon';
+import { PatronsList } from '../components/PatronsList';
+import { RCImage } from '../components/RCImage';
+import { RedTitle } from '../components/RedTitle';
+import { TextDescription } from '../components/TextDescription';
 import {
-  Text,
-  View,
-  TouchableOpacity,
-  Linking,
-  Image,
-  ScrollView,
-  FlatList
-} from "react-native";
-import EStyleSheet from "react-native-extended-stylesheet";
-import {
-  description,
-  title,
-  antySite,
   advantages,
+  antySite,
   cards,
-  patrons,
-  supporters,
-  patronsHonors,
-  whos,
-  mediaTitle,
-  mecenases,
+  description,
   DILSite,
-  UMSite,
+  mecenases,
+  mediaTitle,
+  patrons,
+  patronsHonors,
   patronsHonorsTitle,
+  supporters,
+  title,
+  UMSite,
   visialisations,
-  whoTitle
-} from "../utils/Const";
-import { TitleSite } from "../components/TitleSite";
-import { PatronsList } from "../components/PatronsList";
-import { RedTitle } from "../components/RedTitle";
-import { CloseIcon } from "../components/CloseIcon";
-import { BuyButton } from "../components/BuyButton";
-import { TextDescription } from "../components/TextDescription";
-import { AdvantageItem } from "../components/AdvantageItem";
-import { RCImage } from "../components/RCImage";
-import { Actions } from "react-native-router-flux";
+  whos,
+  whoTitle,
+} from '../utils/Const';
 
 export default class About extends Component {
   render() {
     return (
       <ScrollView style={styles.scroll}>
         <View style={styles.container}>
-          <CloseIcon onPress={()=>Actions.start()} />
+          <CloseIcon onPress={() => Actions.start()} />
           <TouchableOpacity onPress={() => Linking.openURL(antySite)}>
             <RCImage
               uri="biz"

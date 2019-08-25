@@ -1,10 +1,11 @@
-import React from "react";
-import { Dimensions, TouchableOpacity, GestureResponderEvent } from "react-native";
-import _ from "underscore";
-import { Icons } from "../utils/Enums";
-import EStyleSheet from "react-native-extended-stylesheet";
-import { createIconSetFromFontello } from "react-native-vector-icons";
-import fontelloConfig from "../../assets/config.json";
+import React from 'react';
+import { Dimensions, TouchableOpacity } from 'react-native';
+import EStyleSheet from 'react-native-extended-stylesheet';
+import { createIconSetFromFontello } from 'react-native-vector-icons';
+
+import fontelloConfig from '../../assets/config.json';
+import { Icons } from '../utils/Enums';
+
 const Icon = createIconSetFromFontello(fontelloConfig);
 
 export const CloseIcon: React.FC<{onPress:()=>void}> = ({onPress}) => {

@@ -1,6 +1,7 @@
-import React from "react";
-import { Text, TouchableOpacity, View } from "react-native";
-import _ from "underscore";
+import React from 'react';
+import { Text, TouchableOpacity, View } from 'react-native';
+import _ from 'underscore';
+
 interface ButtonProps {
   text: string;
   value: boolean;

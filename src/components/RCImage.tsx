@@ -1,6 +1,6 @@
-import React from "react";
-import {Image } from "react-native";
-import _ from "underscore";
+import React from 'react';
+import { Image } from 'react-native';
+
 interface Props {
   uri: string;
   width: number | string;

@@ -1,8 +1,9 @@
-import React from "react";
-import { Text, Dimensions } from "react-native";
-import _ from "underscore";
-import { site2, site1 } from "../utils/Const";
-import EStyleSheet from "react-native-extended-stylesheet";
+import React from 'react';
+import { Dimensions, Text } from 'react-native';
+import EStyleSheet from 'react-native-extended-stylesheet';
+
+import { site1, site2 } from '../utils/Const';
+
 interface Props {
   capitalize?: boolean;
 }

@@ -18,13 +18,13 @@ export const patternVibration: number[] = new Array(durationVibration / 100).fil
 export const antySite: string = "https://antyszczepionkowcy.biz";
 export const title: string = "Satyryczna gra karciana";
 export const description: string = `Wejdź w świat oszustów zdobywających fortuny na ludzkim strachu i niewiedzy! Wprowadzaj szkodliwe ustawy, inwestuj w bezużyteczne przedmioty i obserwuj jak procent osób zaszczepionych w społeczeństwie spada. Oczywiście, jeśli w efekcie wybuchnie epidemia, lepiej byś sam zdążył się zaszczepić.`;
-export const visialisations:string = `Wizualizacje`;
-export const whoTitle:string = `Kto za tym stoi`;
-export const patronsHonorsTitle:string = `Patroni Honorowi`;
-export const UMSite:string = "https://www.umed.wroc.pl/";
-export const DILSite:string = "https://www.dilnet.wroc.pl/";
-export const mediaTitle:string = `Patroni Medialni i Współpraca`;
-export const mecenases:string = `Mecenasi`;
+export const visialisations: string = `Wizualizacje`;
+export const whoTitle: string = `Kto za tym stoi`;
+export const patronsHonorsTitle: string = `Patroni Honorowi`;
+export const UMSite: string = "https://www.umed.wroc.pl/";
+export const DILSite: string = "https://www.dilnet.wroc.pl/";
+export const mediaTitle: string = `Patroni Medialni i Współpraca`;
+export const mecenases: string = `Mecenasi`;
 export const patrons: any[] = [
     {
         img: "mamapediatra",
@@ -108,6 +108,11 @@ export const supporters: any[] = [
         img: "mensa",
         text: "Stowarzyszenie Mensa Polska",
         link: "https://www.mensa.org.pl/"
+    },
+    {
+        img: "raccoonlogo",
+        text: "Raccoon Software",
+        link: "http://www.raccoonsoftware.pl"
     },
     {
         img: "milek",
