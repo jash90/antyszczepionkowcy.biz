@@ -1,36 +1,37 @@
-import React, { Component } from "react";
+import LottieView from 'lottie-react-native';
+import React, { Component } from 'react';
 import {
-  Text,
-  View,
-  SafeAreaView,
-  TouchableOpacity,
-  Linking,
+  Alert,
   Animated,
   Easing,
-  Alert,
-  Vibration,
   Image,
-  BackHandler
-} from "react-native";
-import EStyleSheet from "react-native-extended-stylesheet";
-import LottieView from "lottie-react-native";
-import { Actions } from "react-native-router-flux";
+  Linking,
+  SafeAreaView,
+  Text,
+  TouchableOpacity,
+  Vibration,
+  View,
+} from 'react-native';
+import EStyleSheet from 'react-native-extended-stylesheet';
+import { Actions } from 'react-native-router-flux';
+import Torch from 'react-native-torch';
+import TrackPlayer from 'react-native-track-player';
+
+import { ButtonDebounce } from '../components/ButtonDebounce';
 import {
+  copyright,
   durationVibration,
-  info,
-  waterIsFake,
-  racconWebsite,
-  isFaked,
   fakeOff,
   fakeOn,
-  copyright,
+  info,
+  isFaked,
+  patternVibration,
   pleaseWait,
+  racconWebsite,
   startText,
-  patternVibration
-} from "../utils/Const";
-import Torch from "react-native-torch";
-import TrackPlayer from "react-native-track-player";
-import { ButtonDebounce } from "../components/ButtonDebounce";
+  waterIsFake,
+} from '../utils/Const';
+
 interface Props {}
 interface State {
   animation: Animated.Value;
